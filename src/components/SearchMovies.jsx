@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 const SearchMovies = ({searchMovies}) => {
-    const [query, setQuery] = useState =('')
+    const [query, setQuery] = useState('')
     const handleSubmit = (e) => {
         e.preventDefault(); 
         searchMovies(query);

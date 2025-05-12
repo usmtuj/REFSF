@@ -1,80 +1,93 @@
 body {
+  background-color: #121212;
+  color: #ffffff;
   font-family: Arial, sans-serif;
-  background-color: #f4f4f9;
   margin: 0;
   padding: 0;
-  color: #333;
-}
-
-.App {
-  max-width: 600px;
-  margin: 50px auto;
-  padding: 20px;
-  background: #fff;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
 }
 
 h1 {
   text-align: center;
-  color: #444;
-  margin-bottom: 20px;
+  margin-top: 20px;
+  color: #ffcc00;
 }
 
 form {
   display: flex;
-  justify-content: space-between;
-  margin-bottom: 20px;
+  justify-content: center;
+  margin: 20px 0;
 }
 
 input[type="text"] {
-  flex: 1;
+  width: 300px;
   padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 16px;
-  margin-right: 10px;
+  border: 1px solid #444;
+  border-radius: 5px;
+  background-color: #1e1e1e;
+  color: #fff;
+  outline: none;
+}
+
+input[type="text"]::placeholder {
+  color: #888;
 }
 
 button {
-  padding: 10px 15px;
-  background-color: #007BFF;
-  color: white;
+  margin-left: 10px;
+  padding: 10px 20px;
   border: none;
-  border-radius: 4px;
+  border-radius: 5px;
+  background-color: #ffcc00;
+  color: #121212;
+  font-weight: bold;
   cursor: pointer;
-  font-size: 16px;
+  transition: background-color 0.3s ease;
 }
 
 button:hover {
-  background-color: #0056b3;
+  background-color: #e6b800;
 }
 
-ul {
+.movie-list {
   list-style: none;
   padding: 0;
-}
-
-.movie {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.movie-item {
+  background-color: #1e1e1e;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 200px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.movie-item:hover {
+  transform: scale(1.05);
+}
+
+.movie-item img {
+  width: 100%;
+  height: auto;
+}
+
+.movie-details {
   padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  margin-bottom: 10px;
-  background-color: #f9f9f9;
 }
 
-.movie button {
-  background-color: #dc3545;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  padding: 5px 10px;
-  cursor: pointer;
+.movie-details h3 {
+  margin: 10px 0 5px;
+  font-size: 18px;
+  color: #ffcc00;
 }
 
-.movie button:hover {
-  background-color: #a71d2a;
+.movie-details p {
+  margin: 0;
+  font-size: 14px;
+  color: #ccc;
 }

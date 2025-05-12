@@ -29,6 +29,7 @@ export const useMovie = () => {
                 setMovies([]);
                 setError("Фильмы не найдены");
             }
+        console.log(data)
         } catch (error) {
             console.error('Ошибка при запросе:', error);
             setMovies([]);

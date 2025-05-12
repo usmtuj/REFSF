@@ -7,14 +7,13 @@ import AddMovie from './components/AddMovie';
 
 function App() {
   const { movies, addMovies, searchMovies, loading } = useMovie();
-  console.log(movies)
   return (
     <div className='App'>
       <h1>Поиск фильмов(;</h1>
       <SearchMovies searchMovies={searchMovies}/>
         
       {loading && <p>Loading...</p>}
-      <AddMovie addMovies={addMovies} />
+      {/* <AddMovie addMovies={addMovies} /> */}
       <MovieList movies={movies} />
     </div>
   );
