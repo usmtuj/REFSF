@@ -1,23 +1,19 @@
-import React, { useState } from 'react';
-import './styles/Style.css'
-import { useMovie } from './UseMovie';
-import MovieList from './components/MovieList';
-import SearchMovies from './components/SearchMovies';
-import AddMovie from './components/AddMovie';
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
+import MovieListPage from './pages/MovieListPage'
+import MovieDetailPage from './pages/MovieDetailPage'
+import FavoritesPage from './pages/FavoritesPage'
 
-function App() {
-  const { movies, addMovies, searchMovies, loading } = useMovie();
+export default function App() {
   return (
-    <div className='App'>
-      <h1>Поиск фильмов(;</h1>
-      <SearchMovies searchMovies={searchMovies}/>
-        
-      {loading && <p>Loading...</p>}
-      {/* <AddMovie addMovies={addMovies} /> */}
-      <MovieList movies={movies} />
-    </div>
-  );
+    <BrowserRouter>
+      <nav style={{ padding: 20 }}>
+        <Link to="/">Каталог</Link> | <Link to="/favorites">Избранное</Link>
+      </nav>
+      <Routes>
+        <Route path="/" element={<MovieListPage />} />
+        <Route path="/movie/:id" element={<MovieDetailPage />} />
+        <Route path="/favorites" element={<FavoritesPage />} />
+      </Routes>
+    </BrowserRouter>
+  )
 }
-
-
-export default App;
